@@ -4,6 +4,8 @@ students = [
     { name: 'Charlie', grade: 70 }
   ];
 
+
+
 function getHighestScoringStudent(students){
   let highest = {name: 'nothing', grade: 0};
   for(let student = 0; student < students.length; student++){
@@ -15,7 +17,7 @@ function getHighestScoringStudent(students){
   return highest
 }
 
-module.exports.getHighestScoringStudent = getHighestScoringStudent;
+
 
 const getAverageScore = (students) => {
   let total = 0;
@@ -26,4 +28,52 @@ const getAverageScore = (students) => {
 }
 console.log(getAverageScore(students))
 
-module.exports.getAverageScore = getAverageScore;
+
+// 🌶️🌶️ Level 2
+// Implement a function getPassingStudents(students) that:
+
+// Takes an array of student objects { name, grade }
+
+// Returns an array of names of students with grades >= 50
+
+// Sorts the passing students alphabetically.
+
+// function getHighestScoringStudent(students){
+//   let highest = {name: 'nothing', grade: 0};
+//   for(let index = 0; index < students.length; index++){
+//     let grade = students[index].grade;
+//     if(grade > highest.grade){
+//       highest = students[index];
+//     }
+//   }
+//   return highest
+// }
+// console.log(getHighestScoringStudent(students))
+
+function getPassingStudents(students){
+  let passingStudents = [];
+  for(let index = 0; index < students.length; index++){
+    let grade = students[index].grade
+    if (grade >= 50) {
+      passingStudents.push(students[index].name)
+      console.log(passingStudents)
+    }
+  }
+  return passingStudents.sort()
+}
+
+
+
+
+
+
+function getPassingStudentsFilter(students){
+  function filterGrades(student) {
+    return student.grade >= 50
+  }
+  const passingStudents = students.filter(filterGrades)
+  return passingStudents
+}
+
+
+module.exports = {getHighestScoringStudent, getAverageScore, getPassingStudents,getPassingStudentsFilter}
