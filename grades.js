@@ -6,6 +6,12 @@ students = [
 
 
 
+const generateMessagesCustom = (namesAndDiscounts) => 
+    namesAndDiscounts.map(({name, discount}) =>  
+        `Hi ${name}! ${discount}% off our best candies for you today!`);
+
+
+
 function getHighestScoringStudent(students){
   let highest = {name: 'nothing', grade: 0};
   for(let student = 0; student < students.length; student++){
@@ -64,16 +70,55 @@ function getPassingStudents(students){
 
 
 
-
-
-
 function getPassingStudentsFilter(students){
+  console.log(students)
   function filterGrades(student) {
     return student.grade >= 50
-  }
-  const passingStudents = students.filter(filterGrades)
+  };
+  const passingStudents = students.filter(filterGrades).map(({name}) => name);
+
   return passingStudents
+  
 }
 
+console.log(getPassingStudentsFilter(students))
 
-module.exports = {getHighestScoringStudent, getAverageScore, getPassingStudents,getPassingStudentsFilter}
+  // const students1 = [
+  //   { studentName: 'Alice', grade1: 90 },
+  //   { studentName: 'Bob', grade1: 40 },
+  //   { studentName: 'Charlie', grade1: 70 }
+  // ];
+
+
+// function getPassingStudentsFilter(students1){
+//   console.log(students1)
+//   function filterGrades(student) {
+//     return student.grade1 >= 50
+//   };
+//   const passingStudents = students1.filter(filterGrades)
+//   console.log("this is output from line 85", passingStudents)
+
+//   const finalPassingStudentOutput = passingStudents.map(({studentName}) => studentName);
+
+//   console.log("this is output from line 89", finalPassingStudentOutput)
+//   return finalPassingStudentOutput
+  
+// }
+
+// const namesAndDiscounts = [
+//   { name: 'Anna', discount: 50 },
+//   { name: 'Laura', discount: 40 },
+//   { name: 'Josh', discount: 30 },
+//   { name: 'Min', discount: 50 },
+//   { name: 'Karla', discount: 60 }
+// ];
+
+// const generateMessagesCustom = (namesAndDiscounts) => 
+//     namesAndDiscounts.map(({name, discount}) =>  
+//         `Hi ${name}! ${discount}% off our best candies for you today!`);
+
+
+
+
+
+// module.exports = {getHighestScoringStudent, getAverageScore, getPassingStudents,getPassingStudentsFilter}
