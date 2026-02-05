@@ -28,14 +28,14 @@ describe('getAverageScore', () =>{
 
 describe('getPassingStudents', () => {
   it('given an array of students will display all students who pass in alphabetical order', () =>{
-    expect(getPassingStudents(students)).toEqual(['Alice','Charlie'])
+    expect(getPassingStudentsFilter(students)).toEqual(['Alice','Charlie'])
   })
 
 })
 
 describe('getPassingStudentsFiltered', () => {
   it('given an array of students will display all students who pass in alphabetical order', () =>{
-    expect(getPassingStudents(students1)).toEqual(['Alice','Charlie'])
+    expect(getPassingStudentsFilter(students1)).toEqual(['Alice','Charlie'])
   })
 
 })

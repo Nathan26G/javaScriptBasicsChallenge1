@@ -56,17 +56,17 @@ console.log(getAverageScore(students))
 // }
 // console.log(getHighestScoringStudent(students))
 
-function getPassingStudents(students){
-  let passingStudents = [];
-  for(let index = 0; index < students.length; index++){
-    let grade = students[index].grade
-    if (grade >= 50) {
-      passingStudents.push(students[index].name)
-      console.log(passingStudents)
-    }
-  }
-  return passingStudents.sort()
-}
+// function getPassingStudents(students){
+//   let passingStudents = [];
+//   for(let index = 0; index < students.length; index++){
+//     let grade = students[index].grade
+//     if (grade >= 50) {
+//       passingStudents.push(students[index].name)
+//       console.log(passingStudents)
+//     }
+//   }
+//   return passingStudents.sort()
+// }
 
 
 
@@ -77,7 +77,7 @@ function getPassingStudentsFilter(students){
   };
   const passingStudents = students.filter(filterGrades).map(({name}) => name);
 
-  return passingStudents
+  return passingStudents.sort()
   
 }
 
@@ -121,4 +121,4 @@ console.log(getPassingStudentsFilter(students))
 
 
 
-// module.exports = {getHighestScoringStudent, getAverageScore, getPassingStudents,getPassingStudentsFilter}
+module.exports = {getHighestScoringStudent, getAverageScore, getPassingStudentsFilter}
